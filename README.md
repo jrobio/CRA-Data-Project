@@ -37,4 +37,4 @@ Staging of data (preparing it for comparison with BCIT's internal data) was appr
 BCIT fortunately has an attribute attached to each registered charity record in its internal database that details the business number of that charity. Therefore, staging of data for this comparison was negligible as an equality could be established between this attribute and the business number provided from the CRA.
 
 #### Director comparison
-A direct comparison on the basis of name is 
+A direct comparison on the basis of name is complicated 
