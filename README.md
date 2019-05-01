@@ -1,8 +1,8 @@
 # CRA Data Project
-My conference session is based on a project I undertook in August of 2018. The project was about efficiently finding a way to compare Canadian Revenue Agency's (CRA) charity data to the BCIT's internal data. This project had the following outcomes:
+My conference session is based on a project I undertook over the summer of 2018. The project was about efficiently finding a way to compare Canadian Revenue Agency's (CRA) charity data to the BCIT's internal data. This project had the following outcomes:
 
-1. Identify Foundation that have given to other comparable charities in greater amounts
-2. Identify Directors who may also be alumni
+1. Identify foundations with a pre-existing relationship with BCIT that have given to other comparable charities in greater amounts.
+2. Identify directors who may also be alumni.
 
 This document discusses
 
@@ -28,5 +28,13 @@ The CRA provides access to the public portions of a registered charity's T3010 t
 
 This information is available for querying by the public through a [search interface](https://www.canada.ca/en/revenue-agency/services/charities-giving/charities-listings.html) for individual entities or in bulk through its [data store](http://www.cra-arc.gc.ca/chrts-gvng/lstngs/rqstfrm-eng.html).
 
-The query for this project was large enough that it required a physical disk shipped to my office. The request was made in April of 2018, and a package was mailed from the CRA on June 8, 2018.
+The query for this project resulted in 200MB of data and required a physical disk shipped to my office. The request was made in April of 2018, and a package was mailed from the CRA on June 8, 2018.
 
+### Staging Data
+Staging of data (preparing it for comparison with BCIT's internal data) was approached differently for the foundation and director comparisons.
+
+#### Foundation Comparison
+BCIT fortunately has an attribute attached to each registered charity record in its internal database that details the business number of that charity. Therefore, staging of data for this comparison was negligible as an equality could be established between this attribute and the business number provided from the CRA.
+
+#### Director comparison
+A direct comparison on the basis of name is 
