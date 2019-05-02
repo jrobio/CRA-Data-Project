@@ -56,4 +56,25 @@ The Directors comparison used the tool [CSVDedupe](https://github.com/dedupeio/c
 CSVDedupe explicitly supports two functions: 
 
 1. Deduplication: tagging rows in a CSV file it suspects are duplicates of other rows in the same file.
-2. Linking: issuing a output CSV file of 
+2. Linking: links together two CSV files on rows it believes are duplicates.
+
+In each case CSVDedupe requires a configuration file that defines which fields it should take into consideration when determining whether or not rows are duplicates in addition to a training period.
+
+##### Configuration File
+The configuration file is written in JSON, but is incredibly simple. The project file is quoted below and included as file in this repository.
+
+```Javascript
+{
+	"field_names_1":	["fullName", "firstName", "middleName", "lastName"],
+	"field_names_2":	["Full Name", "First Name", "Initial", "Last Name"],
+	"field_definition":	[{"field" : "fullName", "type" : "String"},
+						 {"field" : "firstName", "type" : "String"},
+						 {"field" : "middleName", "type" : "String"},
+						 {"field" : "lastName", "type" : "String"}],
+	"output_file":		"C:\\Users\\$USER_ACCOUNT\\Desktop\\csvdedupe\\output_cracom2017.csv",
+	"skip_training":	false,
+	"training_file":	"C:\\Users\\$USER_ACCOUNT\\Desktop\\csvdedupe\\training.json",
+	"sample_size":		150000,
+	"recall_weight":	2
+}
+```
