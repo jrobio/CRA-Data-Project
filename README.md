@@ -55,8 +55,8 @@ The Directors comparison used the tool [CSVDedupe](https://github.com/dedupeio/c
 #### CSVDedupe
 CSVDedupe explicitly supports two functions: 
 
-1. Deduplication: tagging rows in a CSV file it suspects are duplicates of other rows in the same file.
-2. Linking: links together two CSV files on rows it believes are duplicates.
+1. **Deduplication:** tagging rows in a CSV file it suspects are duplicates of other rows in the same file.
+2. **Linking:** links together two CSV files on rows it believes are duplicates.
 
 In each case CSVDedupe requires a configuration file that defines which fields it should take into consideration when determining whether or not rows are duplicates in addition to a training period.
 
@@ -65,12 +65,14 @@ The configuration file is written in JSON, but is incredibly simple. The project
 
 ```Javascript
 {
-	"field_names_1":	["fullName", "firstName", "middleName", "lastName"],
+	"field_names_1":	["fullName", "firstName", "middleName", "lastName", "nickname", "acr"],
 	"field_names_2":	["Full Name", "First Name", "Initial", "Last Name"],
 	"field_definition":	[{"field" : "fullName", "type" : "String"},
 						 {"field" : "firstName", "type" : "String"},
 						 {"field" : "middleName", "type" : "String"},
-						 {"field" : "lastName", "type" : "String"}],
+						 {"field" : "lastName", "type" : "String"},
+						 {"field" : "nickname", "type" : "String"},
+						 {"field" : "acr", "type" : "String"}],
 	"output_file":		"C:\\Users\\$USER_ACCOUNT\\Desktop\\csvdedupe\\output_cracom2017.csv",
 	"skip_training":	false,
 	"training_file":	"C:\\Users\\$USER_ACCOUNT\\Desktop\\csvdedupe\\training.json",
@@ -78,3 +80,36 @@ The configuration file is written in JSON, but is incredibly simple. The project
 	"recall_weight":	2
 }
 ```
+
+A detailed explanation for this file is available [here](https://github.com/dedupeio/csvdedupe#csvlink), but as you will notice, many of the options didn't change from what is included in the tutorial documentation. I highly recommend copying what is provided there and editing to your needs if this is your first experience with JSON.
+
+##### Launching CSVDedupe
+I used the following one-liner in my commandline to launch the training session:
+
+```
+csvlink C:\\Users\\$USER_ACCOUNT\\Desktop\\csvdedupe\\input_bcit.csv C:\\Users\\$USER_ACCOUNT\\Desktop\\csvdedupe\\input_cra.csv --config_file=config.json --inner_join
+```
+
+I included the ```inner_join``` flag because without it the output file would include all the concatenated rows between the files in addition to all the rows that didn't have any matches. Considering both compared files initially had ~200K rows, I didn't want to tempt Excel with a crash by combining them.
+
+##### Training
+Here is where the machine learning magic is created. CSVDedupe needs to be taught what is and isn't a match. It accomplishes this by presenting you with matching candidates and asks you whether they match, don't match, or if you're unsure. My prompt looked similar to this.
+
+```
+fullname :  John Burrard Smith
+firstname :  John
+middlename : Burrard
+lastname :  Smith
+nickname : Jelly
+acr: JBS
+
+Full Name :  John A. Smith
+First Name :  John
+Initial : JAS
+Last Name :  Smith
+
+Do these records refer to the same thing?
+(y)es / (n)o / (u)nsure / (f)inished
+```
+
+The documentation for CSVDedupe recommends at least 10 positive and negative matches. However, this recommendation is heavily dependent on your source data. For example, it required some 200 negative matches before I could confirm 10 positive matches. This is likely th result of the fact that my single point of comparison was names. If I had additional points of comparison, like addresses, contact information, or occupations the system would have had a far easier time presenting me with better candidates.
