@@ -114,7 +114,7 @@ The documentation for CSVDedupe [recommends](https://github.com/dedupeio/csvdedu
 	- **ON:** 2,232
 	- **BC:** 1,943
 	- **AB:** 685
-	- **AB:** 383
+	- **QC:** 383
 - Manual effort was spent on confirming the 1,943 BC directors, of which 60 could be positively confirmed (3% hit rate)
 
 #### Limitations and Issues
