@@ -122,7 +122,8 @@ The documentation for CSVDedupe [recommends](https://github.com/dedupeio/csvdedu
 - CSVDedupe is a wonderfully streamlined interface for the Dedupe library. However, it was not without its issues. I had edit the code to ensure it ran smoothly on my machine.
 
 #### Opportunities
-- Comparing Gifts towards foundations of comparable size/focus to BCIT to identify funding sources that are not engaged or donating in lower amounts.
+- Comparing Gifts towards foundations of comparable size/focus to BCIT to identify funding sources that are not engaged or donating to BCIT in lower amounts.
 - Trying different schemes to introduce more factors of identification to raise the confidence of matches. This could look like:
 	- Giving point values to matched individuals who are older. The thinking being that older individuals are more likely to serve on charitable boards.
 	- Further match by comparing cities in addition to provinces.
+- Identifying which directors in each market oversee the largest charities by size of their capital reserves/throughput of their gifts to qualified donees.
