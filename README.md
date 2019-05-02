@@ -12,7 +12,7 @@ This document discusses
 
 ## Population Characteristics
 ### CRA Data
-- year of 2017
+- 2017
 - Charities headquartered in: Alberta, British Columbia, Ontario, and Quebec
 - Charities Types: Benefits to Community, Welfare, Education, and Other
 - 24,640 Foundations
