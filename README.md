@@ -115,3 +115,12 @@ Do these records refer to the same thing?
 The documentation for CSVDedupe [recommends](https://github.com/dedupeio/csvdedupe#training) at least 10 positive and negative matches. However, this recommendation is heavily dependent on your source data. For example, it required some 200 negative matches before I could confirm 10 positive matches. This is likely the result of my single point of comparison being names. 
 
 If I had additional points of comparison, like addresses, contact information, or occupations the system would have had a far easier time presenting me with better candidates.
+
+### Results
+#### Foundation Comparison
+
+#### Director Comparison
+
+#### Limitations and Issues
+
+#### Opportunities
