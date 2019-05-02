@@ -7,7 +7,7 @@ My conference session is based on a project I undertook over the summer of 2018.
 This document discusses
 
 - **Population Characteristics:** the population characteristics of the CRA and BCIT data
-- **Methodology:** the tools used to access, stage, and comparing of data
+- **Methodology:** the methods and tools used to access, stage, and compare data
 - **Results:** What the project resulted in as well as limitations and opportunities for further exploration with this data.
 
 ## Population Characteristics
@@ -34,7 +34,20 @@ The query for this project resulted in 200MB of data and required a physical dis
 Staging of data (preparing it for comparison with BCIT's internal data) was approached differently for the foundation and director comparisons.
 
 #### Foundation Comparison
-BCIT fortunately has an attribute attached to each registered charity record in its internal database that details the business number of that charity. Therefore, staging of data for this comparison was negligible as an equality could be established between this attribute and the business number provided from the CRA.
+BCIT has an attribute attached to each registered charity record in its internal database that details the business number of that charity. Therefore, staging of data for this comparison was negligible as an equality could be established between this attribute and the business number provided from the CRA.
 
 #### Director comparison
-A direct comparison on the basis of name is complicated 
+Staging was slightly more complex for the Directors comparison. Names, especially when viewed with little or no other additional factors of identification (contact information, addresses, employment positions) can be incredibly difficult to match with confidence. 
+
+To support the fuzzy matching of names, all information BCIT held internally about constituent records was included in an export and combined in separate fields in several ways:
+
+- Individual field names (fname, mname, lname, nickname)
+- combined names (fullname with/without mname, nickname in place of fname)
+- Acronyms
+
+These three types of name representations conformed to what was available from the CRA.
+
+### Comparison
+As mentioned, the Foundation comparison was fairly straight forward. BCIT maintains the business numbers of charities it has engagement with as a matter of policy. For this specific project, an export from our database and the CRA data were loaded into Microsoft Access and a duplication query was run on the business number fields of each dataset.
+
+The Directors comparison was 
