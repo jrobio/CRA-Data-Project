@@ -120,6 +120,9 @@ The documentation for CSVDedupe [recommends](https://github.com/dedupeio/csvdedu
 #### Limitations and Issues
 - Factors of comparison were an issue for this project. CSVDedupe adequately identified similiar names, but it didn't have enough information to find a difference between people with effectively the same names.
 - CSVDedupe is a wonderfully streamlined interface for the Dedupe library. However, it was not without its issues. I had edit the code to ensure it ran smoothly on my machine.
-- In addition to the CRA charities database being a high quality source of free and public philanthropic data, there was a hope that the incidence of 
 
 #### Opportunities
+- Comparing Gifts towards foundations of comparable size/focus to BCIT to identify funding sources that are not engaged or donating in lower amounts.
+- Trying different schemes to introduce more factors of identification to raise the confidence of matches. This could look like:
+	- Giving point values to matched individuals who are older. The thinking being that older individuals are more likely to serve on charitable boards.
+	- Further match by comparing cities in addition to provinces.
