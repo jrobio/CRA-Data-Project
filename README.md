@@ -50,4 +50,10 @@ These three types of name representations conformed to what was available from t
 ### Comparison
 As mentioned, the Foundation comparison was fairly straight forward. BCIT maintains the business numbers of charities it has engagement with as a matter of policy. For this specific project, an export from our database and the CRA data were loaded into Microsoft Access and a duplication query was run on the business number fields of each dataset.
 
-The Directors comparison was 
+The Directors comparison used the tool [CSVDedupe](https://github.com/dedupeio/csvdedupe), a simplified commandline tool based on the python library [Dedupe](https://dedupe.io/).
+
+#### CSVDedupe
+CSVDedupe explicitly supports two functions: 
+
+1. Deduplication: tagging rows in a CSV file it suspects are duplicates of other rows in the same file.
+2. Linking: issuing a output CSV file of 
