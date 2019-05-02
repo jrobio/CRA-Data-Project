@@ -1,5 +1,5 @@
 # CRA Data Project
-My conference session is based on a project I undertook over the summer of 2018. The project was about efficiently finding a way to compare Canadian Revenue Agency's (CRA) charity data to the BCIT's internal data. This project had the following outcomes: Identify directors who may also be alumni.
+My conference session is based on a project I undertook over the summer of 2018. The project was about efficiently finding a way to compare Canadian Revenue Agency's (CRA) charity data to the BCIT's internal data. The project's outcome was to identify directors of charities that were also BCIT alumni.
 
 This document discusses
 
