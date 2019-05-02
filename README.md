@@ -60,6 +60,12 @@ CSVDedupe explicitly supports two functions:
 
 In each case CSVDedupe requires a configuration file that defines which fields it should take into consideration when determining whether or not rows are duplicates in addition to a training period.
 
+##### Installation
+
+1. Install [Python](https://www.python.org/)
+2. Add ```C:\Program Files\Python36``` and ```C:\Program Files\Python36\Scripts``` to your [PATH](https://superuser.com/questions/949560/how-do-i-set-system-environment-variables-in-windows-10) variable (your Python location may vary depending on your OS type and version)
+3. Launch a commandline and run ```pip install csvdedupe```
+
 ##### Configuration File
 The configuration file is written in JSON, but is incredibly simple. The project file is quoted below and included as file in this repository.
 
